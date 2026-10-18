@@ -3,12 +3,13 @@ import { Download, Moon, Plus, Save, ShieldCheck, Sun, Trash2, UserRound } from 
 import { useGymData } from '../context/GymDataContext';
 import { useAuth } from '../context/AuthContext';
 import { firebaseSetupMessage } from '../services/firebase';
+import { deleteAccountAndData, authErrorMessage } from '../services/authService';
 import { Button, Card, Input, SectionTitle, Select, StatusPill } from '../components/ui';
 import { goalProgress } from '../utils/calculations';
 
 export function Settings() {
   const { data, updateProfile, addGoal, deleteGoal } = useGymData();
-  const { logout, configured } = useAuth();
+  const { logout, configured, user } = useAuth();
   const [name, setName] = useState(data.profile.displayName);
   const [units, setUnits] = useState(data.profile.preferredUnits);
   const [weeklyTarget, setWeeklyTarget] = useState(String(data.profile.weeklyTarget ?? 4));
@@ -36,6 +37,11 @@ export function Settings() {
     addGoal({ goalType: 'measurement', name: goalName, targetValue: Number(goalTarget), startingValue: 0, currentValue: 0, unit: goalUnit, startDate: new Date().toISOString(), status: 'active' });
     setGoalName(''); setGoalTarget('');
   };
+  const deleteAccount = async () => {
+    if (!configured || !user) { window.alert('Account deletion is available after Firebase is connected and verified.'); return; }
+    if (!window.confirm('Delete your GymTrack account and all stored records? This cannot be undone.')) return;
+    try { await deleteAccountAndData(user); localStorage.removeItem('gymtrack-local-data'); window.location.assign('/'); } catch (error) { window.alert(authErrorMessage(error)); }
+  };
 
   return <div className="mx-auto max-w-[1100px]">
     <SectionTitle eyebrow="Workspace controls" title="Profile & settings" description="Manage the details and preferences that shape your private training record." />
@@ -56,7 +62,7 @@ export function Settings() {
       <aside className="space-y-5">
         <Card className="p-5"><div className="flex items-center gap-3"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-lime/10 text-lime"><ShieldCheck size={18} /></div><div><div className="text-sm font-semibold">Firebase connection</div><div className="mt-1 text-xs text-muted">Preview persistence is local.</div></div></div><p className="mt-4 text-xs leading-5 text-muted">{firebaseSetupMessage}</p><div className="mt-4 rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-3 text-xs leading-5 text-amber-100">The current workspace is clearly marked as preview data until Firebase credentials are supplied and tested.</div></Card>
         <Card className="p-5"><div className="flex items-center justify-between"><div><div className="text-sm font-semibold">Appearance</div><div className="mt-1 text-xs text-muted">Choose your reading mode.</div></div><button onClick={() => setLight(!light)} className="rounded-xl border border-line p-2 text-muted hover:text-white" aria-label="Toggle appearance">{light ? <Sun size={16} /> : <Moon size={16} />}</button></div><div className="mt-4 flex gap-2"><button onClick={() => setLight(false)} className={`flex-1 rounded-xl border px-3 py-2 text-xs ${!light ? 'border-lime bg-lime/10 text-lime' : 'border-line text-muted'}`}>Dark</button><button onClick={() => setLight(true)} className={`flex-1 rounded-xl border px-3 py-2 text-xs ${light ? 'border-lime bg-lime/10 text-lime' : 'border-line text-muted'}`}>Light</button></div></Card>
-        <Card className="border-red-500/20 p-5"><div className="text-sm font-semibold text-red-200">Danger zone</div><p className="mt-2 text-xs leading-5 text-muted">Account deletion will remove authentication and associated personal records once Firebase is connected.</p><Button variant="secondary" className="mt-4 w-full" onClick={() => { void logout(); }}>Log out</Button><Button variant="danger" className="mt-2 w-full" onClick={() => window.alert(configured ? 'Account deletion requires a verified Firebase Cloud Function or trusted server flow.' : 'Account deletion is available after Firebase is connected and verified.')}>Delete account</Button></Card>
+        <Card className="border-red-500/20 p-5"><div className="text-sm font-semibold text-red-200">Danger zone</div><p className="mt-2 text-xs leading-5 text-muted">Account deletion removes authentication and associated personal records when Firebase is connected. Firebase may require a recent sign-in.</p><Button variant="secondary" className="mt-4 w-full" onClick={() => { void logout(); }}>Log out</Button><Button variant="danger" className="mt-2 w-full" onClick={() => { void deleteAccount(); }}>Delete account</Button></Card>
       </aside>
     </div>
   </div>;

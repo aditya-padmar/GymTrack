@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, sendPasswordResetEmail, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, type User } from 'firebase/auth';
+import { createUserWithEmailAndPassword, deleteUser, GoogleAuthProvider, sendPasswordResetEmail, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, type User } from 'firebase/auth';
 import { auth, db } from './firebase';
-import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { collection, deleteDoc, doc, getDocs, serverTimestamp, setDoc, writeBatch } from 'firebase/firestore';
 
 export const authErrorMessage = (error: unknown) => {
   const code = (error as { code?: string })?.code ?? '';
@@ -30,4 +30,26 @@ export async function loginWithEmail(email: string, password: string) { const { 
 export async function loginWithGoogle() { const { auth: firebaseAuth, db: firestore } = ensureAuth(); const result = await signInWithPopup(firebaseAuth, new GoogleAuthProvider()); await setDoc(doc(firestore, 'users', result.user.uid), { uid: result.user.uid, displayName: result.user.displayName ?? result.user.email?.split('@')[0] ?? 'Athlete', email: result.user.email ?? '', preferredUnits: 'metric', secondaryGoals: [], equipmentAccess: [], onboardingCompleted: false, updatedAt: serverTimestamp() }, { merge: true }); return result.user; }
 export async function resetPassword(email: string) { const { auth: firebaseAuth } = ensureAuth(); await sendPasswordResetEmail(firebaseAuth, email); }
 export async function logout() { if (auth) await signOut(auth); }
+export async function deleteAccountAndData(user: User) {
+  const { db: firestore } = ensureAuth();
+  const userRef = doc(firestore, 'users', user.uid);
+  const workoutSnapshots = await getDocs(collection(userRef, 'workouts'));
+  const batch = writeBatch(firestore);
+  for (const workout of workoutSnapshots.docs) {
+    const exercises = await getDocs(collection(workout.ref, 'exercises'));
+    for (const exercise of exercises.docs) {
+      const sets = await getDocs(collection(exercise.ref, 'sets'));
+      sets.docs.forEach((set) => batch.delete(set.ref));
+      batch.delete(exercise.ref);
+    }
+    batch.delete(workout.ref);
+  }
+  for (const collectionName of ['bodyMeasurements', 'goals']) {
+    const snapshots = await getDocs(collection(userRef, collectionName));
+    snapshots.docs.forEach((item) => batch.delete(item.ref));
+  }
+  batch.delete(userRef);
+  await batch.commit();
+  await deleteUser(user);
+}
 export const currentUser = (): User | null => auth?.currentUser ?? null;

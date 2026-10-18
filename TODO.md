@@ -9,7 +9,7 @@
 ## Authentication and onboarding
 
 - [x] Users can register and log in with Firebase Authentication using email/password and Google sign-in, reset passwords, verify email, persist sessions, log out, and receive clear validation/error messages. Firebase-dependent E2E verification remains open until project credentials are supplied.
-- [x] Protected-route-ready auth state and onboarding screens are present; new users can complete onboarding before the main application, and returning users with completed onboarding can reach the dashboard. Final route enforcement remains open for the connected Firebase environment.
+- [x] Configured-mode route guards redirect unauthenticated users to login and incomplete profiles to onboarding; new users can complete onboarding before the main application, and returning users with completed onboarding can reach the dashboard. Firebase credential and E2E verification remains open.
 - [x] Onboarding collects personal information, optional age/date of birth, height, current weight, units, profile picture, primary and secondary goals, optional target weight/date, equipment access, workout preferences, weekly frequency target, and optional starting measurements; the review step persists the profile in the current data adapter. Optional age/profile picture/secondary target fields remain to be extended.
 - [x] Profiles and preferences can be edited later, and passwords are never stored in Firestore.
 
