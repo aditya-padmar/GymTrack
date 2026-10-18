@@ -1,0 +1,15 @@
+{
+  "routes": [
+    { "path": "/", "title": "GymTrack" },
+    { "path": "/signup", "title": "Create account | GymTrack" },
+    { "path": "/login", "title": "Log in | GymTrack" },
+    { "path": "/onboarding", "title": "Onboarding | GymTrack" },
+    { "path": "/dashboard", "title": "Dashboard | GymTrack" },
+    { "path": "/log-workout", "title": "Log workout | GymTrack" },
+    { "path": "/history", "title": "Workout history | GymTrack" },
+    { "path": "/progress", "title": "Exercise progress | GymTrack" },
+    { "path": "/measurements", "title": "Body measurements | GymTrack" },
+    { "path": "/analytics", "title": "Analytics | GymTrack" },
+    { "path": "/settings", "title": "Profile & settings | GymTrack" }
+  ]
+}
