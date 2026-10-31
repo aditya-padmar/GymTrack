@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowDown, ArrowUp, Check, ChevronDown, Copy, Dumbbell, GripVertical, Minus, Pause, Play, Plus, RotateCcw, Save, Timer, Trash2, X } from 'lucide-react';
+import { ArrowDown, ArrowUp, Check, Copy, GripVertical, Minus, Pause, Play, Plus, RotateCcw, Save, Timer, Trash2, X } from 'lucide-react';
+import { Dumbbell } from 'lucide-react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useGymData } from '../context/GymDataContext';
 import type { Exercise, ExerciseType, Workout, WorkoutSet } from '../types';
