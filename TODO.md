@@ -49,3 +49,9 @@
 ## Fresh account behavior
 
 - [x] Preview signup initializes a new empty local workspace with no seeded workout history, measurements, or goals; the user is sent to onboarding and can proceed to create the first workout log. The landing-page Explore preview remains the place to view sample data. Firebase-backed account creation remains ready for the later configuration step.
+
+
+## Equipment-aware workout logging
+
+- [x] The workout editor derives its equipment choices from the equipment selected during onboarding, preserves an existing exercise's current equipment value, and avoids presenting unrelated equipment as a default.
+- [x] The rest timer starts at 30 seconds and provides a visible control to add 10 seconds whenever needed.
