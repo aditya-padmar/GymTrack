@@ -35,3 +35,12 @@
 - [x] Unauthenticated users cannot access private Firebase records; users can only read or modify their own profile and subcollections; ownership and basic field types/values are protected by Firestore Security Rules, with required indexes included. Emulator verification remains open.
 - [x] Firebase setup requirements, environment variables, security configuration, deployment instructions, testing results, completed features, and remaining work are documented; Firebase-dependent functionality is not claimed as tested until configuration is connected.
 - [ ] The primary connected journey is verified end to end: register, complete onboarding, create/save a workout, refresh, reopen, edit, and confirm dashboard statistics update.
+
+## Redesign delta outcomes
+
+- [x] The first-run experience is linear and clear: the landing page presents Login and Create account choices; after account creation the user is taken to personal details before the journal.
+- [x] Personal details explicitly collect name, age, gender, current height, current weight, and goal weight, with values persisted through the existing data adapter and available for later editing.
+- [x] Exercise entry explicitly collects exercise name, targeting muscle, reps, weight amount, weight unit, and machine/equipment, while preserving exercise type and date-aware workout records.
+- [x] Users can choose an exact date/day in the progress/history view and see the sessions recorded for that date, with an empty state when no session exists.
+- [x] The workout screen displays an elapsed workout timer and a separate rest timer; each can be turned on/off independently and reset or started manually without prescribing exercises.
+- [x] The redesigned journey remains responsive, keeps the charcoal/lime visual system, preserves preview/local persistence, and keeps Firebase integration clearly labeled as unverified until credentials are configured.

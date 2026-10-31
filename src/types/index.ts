@@ -7,6 +7,8 @@ export interface Profile {
   uid: string;
   displayName: string;
   email: string;
+  age?: number;
+  gender?: string;
   height?: number;
   currentWeight?: number;
   preferredUnits: Units;

@@ -79,3 +79,9 @@ Three possible styles were considered:
 ## Approval note
 
 This plan assumes Firebase remains the requested external data/authentication provider, uses no unnecessary custom backend, and ships a real data model plus a clearly documented configuration handoff. Implementation should begin after review of this plan.
+
+## Redesign delta: simpler first-run journey and session tools
+
+The primary first-run journey is now intentionally linear: landing page, then login or create account, then a focused personal-details form collecting name, age, gender, current height, current weight, and goal weight before the user reaches the journal. Existing goal/equipment preferences may remain available as secondary settings rather than blocking the first workout.
+
+Workout entry will make the user's requested exercise record explicit: exercise name, targeting muscle, reps, weight amount, weight unit, and machine/equipment. The user can reopen the application, choose an exact workout date/day, and inspect the sessions and progress recorded for that day. The workout editor will expose an elapsed workout timer and a separately controlled rest timer, both with visible on/off controls and reset/start actions. Neither timer generates training advice.
