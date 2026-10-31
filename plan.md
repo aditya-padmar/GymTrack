@@ -90,3 +90,8 @@ Workout entry will make the user's requested exercise record explicit: exercise 
 ## Equipment and timer refinement
 
 Workout entry will derive the equipment selector from the user's onboarding `equipmentAccess` values, include the current saved equipment value for historical records when necessary, and use the first onboarding choice only as the default for a newly added exercise. The rest timer's initial/reset duration is 30 seconds, with an explicit +10 seconds action.
+
+
+## New-log focus gate
+
+A new workout log opens with a short “What are you training today?” gate. It supports multi-selecting muscle groups before continuing to the existing workout editor; editing an existing log skips the gate. The rest timer retains a 30-second initial value and exposes only the +10 seconds action.

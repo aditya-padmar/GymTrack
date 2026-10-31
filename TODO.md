@@ -55,3 +55,9 @@
 
 - [x] The workout editor derives its equipment choices from the equipment selected during onboarding, preserves an existing exercise's current equipment value, and avoids presenting unrelated equipment as a default.
 - [x] The rest timer starts at 30 seconds and provides a visible control to add 10 seconds whenever needed.
+
+
+## New-log training focus
+
+- [x] Before a new workout log opens, ask “What are you training today?” and require the user to choose one or more muscle groups from a selectable list, then continue to the normal workout editor.
+- [x] Keep editing existing logs direct, remove the 30s/60s/90s rest presets, and retain only the rest timer's +10s action while its initial value remains 30 seconds.
