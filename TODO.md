@@ -44,3 +44,8 @@
 - [x] Users can choose an exact date/day in the progress/history view and see the sessions recorded for that date, with an empty state when no session exists.
 - [x] The workout screen displays an elapsed workout timer and a separate rest timer; each can be turned on/off independently and reset or started manually without prescribing exercises.
 - [x] The redesigned journey remains responsive, keeps the charcoal/lime visual system, preserves preview/local persistence, and keeps Firebase integration clearly labeled as unverified until credentials are configured.
+
+
+## Fresh account behavior
+
+- [x] Preview signup initializes a new empty local workspace with no seeded workout history, measurements, or goals; the user is sent to onboarding and can proceed to create the first workout log. The landing-page Explore preview remains the place to view sample data. Firebase-backed account creation remains ready for the later configuration step.
