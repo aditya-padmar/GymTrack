@@ -79,3 +79,9 @@
 
 - [x] Restyle only the public landing route with the supplied dark editorial performance reference: near-black surfaces, signal orange accent, condensed display hierarchy, telemetry preview, feature cards, comparison matrix, CTA, and footer while leaving internal app routes unchanged.
 - [x] Preserve working landing CTAs for account creation, login, and live demo navigation, with responsive behavior at desktop and phone widths.
+
+
+## Supplied code reference pass
+
+- [x] Re-aligned the landing page to the supplied HTML reference: Bebas Neue / Space Grotesk typography, exact orange/surface palette, telemetry system overline, workout logger labels, 7D-style chart panel, reference feature copy, comparison language, and CTA hierarchy.
+- [x] Restored the shared Tailwind stylesheet directives after the landing-only stylesheet update and verified the internal dashboard remains visually intact.

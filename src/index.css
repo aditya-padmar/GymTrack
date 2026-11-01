@@ -1,11 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #101310; color: #fff; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html, body, #root { max-width: 100%; overflow-x: hidden; }
+body { margin: 0; min-width: 320px; background: #101310; }
+button, input, select, textarea { font: inherit; }
+::selection { background: rgba(200,245,58,.28); color: #fff; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #29322d; border-radius: 999px; }
+
+@media (max-width: 639px) {
+  input, select, textarea, button { max-width: 100%; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .bg-grid { background-image: linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px); background-size: 38px 38px; }
+}
+
 
 
 /* Landing page reference treatment: dense telemetry, warm signal orange, editorial type. */
-.landing-page { --landing-orange: #ff5a24; --landing-orange-soft: rgba(255,90,36,.16); --landing-line: rgba(255,255,255,.08); color: #f3f3f2; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #0c0d0f; }
+.landing-page { --landing-orange: #ff5e1e; --landing-orange-soft: rgba(255,94,30,.16); --landing-line: rgba(255,255,255,.08); color: #e2e2e8; font-family: 'Space Grotesk', Inter, ui-sans-serif, system-ui, sans-serif; background: #111317; }
 .landing-page h1, .landing-page h2, .landing-page h3, .landing-page .landing-wordmark { color: #f3f3f2; }
 .landing-page a { color: inherit; text-decoration: none; }
 .landing-header { align-items: center; border-bottom: 1px solid var(--landing-line); display: flex; gap: 1rem; justify-content: space-between; margin: 0 auto; max-width: 1480px; padding: 1rem 2rem; position: relative; z-index: 2; }
-.landing-wordmark { align-items: center; display: inline-flex; font-size: .66rem; font-weight: 900; gap: .45rem; letter-spacing: .12em; white-space: nowrap; }
+.landing-wordmark { align-items: center; display: inline-flex; font-family: 'Bebas Neue', Impact, sans-serif; font-size: .9rem; font-weight: 400; gap: .45rem; letter-spacing: .12em; white-space: nowrap; }
 .landing-mark { align-items: center; background: var(--landing-orange); color: #111; display: inline-flex; font-size: .7rem; height: 1.2rem; justify-content: center; width: 1.2rem; }
 .landing-nav { display: flex; gap: 1.5rem; margin-left: auto; margin-right: auto; text-transform: uppercase; font-size: .52rem; font-weight: 800; letter-spacing: .1em; color: #7b7f86; }
 .landing-nav a:hover, .landing-login:hover { color: var(--landing-orange); }
@@ -21,10 +46,10 @@
 .landing-eyebrow, .landing-section-kicker, .landing-panel-kicker { color: #b2b3b7; font-size: .5rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .landing-eyebrow { align-items: center; display: inline-flex; gap: .45rem; }
 .landing-eyebrow span { background: var(--landing-orange); border-radius: 999px; height: .35rem; width: .35rem; }
-.landing-hero h1, .landing-section h2, .landing-compare-intro h2, .landing-cta h2 { font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-weight: 900; letter-spacing: -.025em; line-height: .92; margin: 1rem 0 0; text-transform: uppercase; }
-.landing-hero h1 { font-size: clamp(3.1rem, 7vw, 6.6rem); }
+.landing-hero h1, .landing-section h2, .landing-compare-intro h2, .landing-cta h2 { font-family: 'Bebas Neue', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-weight: 400; letter-spacing: .02em; line-height: .86; margin: 1rem 0 0; text-transform: uppercase; }
+.landing-hero h1 { font-size: clamp(4rem, 8.2vw, 7rem); }
 .landing-page em { color: var(--landing-orange); font-style: normal; }
-.landing-hero-copy { color: #989ba0; font-size: .76rem; line-height: 1.6; margin: 1.4rem auto 0; max-width: 620px; }
+.landing-hero-copy { color: #c0c6d7; font-size: .8rem; line-height: 1.6; margin: 1.4rem auto 0; max-width: 620px; }
 .landing-hero-actions { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-top: 1.7rem; }
 .landing-proof-row { color: #777b81; display: flex; flex-wrap: wrap; font-size: .48rem; font-weight: 800; gap: 1.5rem; justify-content: center; letter-spacing: .08em; margin-top: 1.7rem; text-transform: uppercase; }
 .landing-proof-row span { align-items: center; display: inline-flex; gap: .3rem; }
@@ -67,18 +92,21 @@
 .landing-shot-form { background-image: radial-gradient(ellipse at 72% 55%, #a5a4a1 0 7%, transparent 8%), linear-gradient(120deg, #101214, #384145 52%, #17191b); }
 .landing-shot-overlay { bottom: 1rem; left: 1rem; position: absolute; z-index: 1; }
 .landing-shot-overlay span { color: var(--landing-orange); display: block; font-size: .45rem; font-weight: 900; letter-spacing: .1em; }
-.landing-shot-overlay strong { display: block; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 1.15rem; letter-spacing: .02em; text-transform: uppercase; }
+.landing-shot-overlay strong { display: block; font-family: 'Bebas Neue', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 1.35rem; letter-spacing: .02em; text-transform: uppercase; }
 .landing-section { margin: 7rem auto 0; max-width: 1200px; padding: 0 1.25rem; }
 .landing-section-heading { align-items: end; display: grid; gap: 2rem; grid-template-columns: 1.1fr .9fr; }
 .landing-section h2, .landing-compare-intro h2 { font-size: clamp(2.4rem, 5vw, 4.9rem); }
 .landing-section-heading p, .landing-compare-intro p { color: #8d9096; font-size: .7rem; line-height: 1.7; max-width: 380px; }
 .landing-feature-grid { display: grid; gap: .8rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.2rem; }
 .landing-feature-card { background: #17191c; border: 1px solid var(--landing-line); min-height: 235px; padding: 1.2rem; }
-.landing-feature-card:hover { border-color: rgba(255,90,36,.6); }
+.landing-feature-card:hover { border-color: rgba(255,94,30,.6); }
 .landing-feature-icon { align-items: center; background: var(--landing-orange-soft); color: var(--landing-orange); display: flex; height: 2rem; justify-content: center; width: 2rem; }
 .landing-feature-card > span { color: #777b81; display: block; font-size: .48rem; font-weight: 900; letter-spacing: .08em; margin-top: 1.4rem; }
-.landing-feature-card h3 { font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 1.35rem; letter-spacing: .02em; margin-top: .45rem; text-transform: uppercase; }
+.landing-feature-card h3 { font-family: 'Bebas Neue', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 1.55rem; font-weight: 400; letter-spacing: .02em; margin-top: .45rem; text-transform: uppercase; }
 .landing-feature-card p { color: #898c92; font-size: .64rem; line-height: 1.7; margin-top: .55rem; }
+.landing-feature-meta { background: rgba(12,14,18,.56); border-radius: .2rem; margin-top: 1.2rem; padding: .7rem; }
+.landing-feature-meta > div:first-child { align-items: center; color: #8d9098; display: flex; font-size: .48rem; justify-content: space-between; letter-spacing: .08em; text-transform: uppercase; }
+.landing-feature-meta b { color: #e2e2e8; font-size: .48rem; }
 .landing-feature-line { background: #2c2f34; height: 2px; margin-top: 1.5rem; }
 .landing-feature-line i { background: var(--landing-orange); display: block; height: 100%; width: 28%; }
 .landing-compare-intro { text-align: center; }

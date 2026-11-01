@@ -110,3 +110,8 @@ GymTrack uses viewport-safe shell containers and responsive spacing across the a
 ## Landing-page reference treatment
 
 The public landing page now uses a dense, dark performance-editorial treatment based on the supplied reference: signal orange instead of the app's internal lime accent, condensed uppercase headline hierarchy, compact telemetry dashboard preview, abstract training image tiles, evidence-led feature cards, a comparison matrix, bold CTA panel, and compact footer. Internal routes retain the existing GymTrack UI.
+
+
+## Exact reference alignment
+
+The supplied HTML reference is the source of truth for the landing pass: its copy, orange primary-container color, dark surface hierarchy, Bebas Neue display family, Space Grotesk body family, header labels, telemetry control labels, feature metadata, comparison vocabulary, and CTA structure are reflected in the React landing route. Shared app styles remain separate and unchanged in behavior.
