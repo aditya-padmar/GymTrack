@@ -61,3 +61,8 @@
 
 - [x] Before a new workout log opens, ask “What are you training today?” and require the user to choose one or more muscle groups from a selectable list, then continue to the normal workout editor.
 - [x] Keep editing existing logs direct, remove the 30s/60s/90s rest presets, and retain only the rest timer's +10s action while its initial value remains 30 seconds.
+
+## Muscle selection in workout tracking
+
+- [x] The new-log muscle chooser uses Biceps and Triceps as separate options and does not show Arms.
+- [x] The workout editor's Targeting muscle selector uses the muscle group(s) selected before the session; the first selected group is the default for the first and newly added exercises instead of hardcoded Chest, while existing saved values remain available when editing.

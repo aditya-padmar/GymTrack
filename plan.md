@@ -95,3 +95,8 @@ Workout entry will derive the equipment selector from the user's onboarding `equ
 ## New-log focus gate
 
 A new workout log opens with a short “What are you training today?” gate. It supports multi-selecting muscle groups before continuing to the existing workout editor; editing an existing log skips the gate. The rest timer retains a 30-second initial value and exposes only the +10 seconds action.
+
+
+## Selected-muscle propagation correction
+
+The new-log focus selections are passed into the workout editor as the available Targeting muscle options. The first selected group initializes the first exercise and newly added exercises; users can switch each exercise among the selected groups. Biceps and Triceps are separate focus options, and the generic Arms option is removed. Existing saved exercise muscle values remain visible when editing.
