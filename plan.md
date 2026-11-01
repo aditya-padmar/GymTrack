@@ -105,3 +105,8 @@ The new-log focus selections are passed into the workout editor as the available
 ## Responsive layout refinement
 
 GymTrack uses viewport-safe shell containers and responsive spacing across the app. On phones, the landing header prioritizes the primary account action, the mobile drawer fits narrow screens, and the workout editor switches from the desktop set table to stacked touch-friendly set cards. Tablet and desktop widths retain the denser table and two-column workout layout.
+
+
+## Landing-page reference treatment
+
+The public landing page now uses a dense, dark performance-editorial treatment based on the supplied reference: signal orange instead of the app's internal lime accent, condensed uppercase headline hierarchy, compact telemetry dashboard preview, abstract training image tiles, evidence-led feature cards, a comparison matrix, bold CTA panel, and compact footer. Internal routes retain the existing GymTrack UI.

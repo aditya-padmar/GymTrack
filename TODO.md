@@ -73,3 +73,9 @@
 - [x] GymTrack layouts are constrained to the viewport from 320px upward, with overflow protection in the global shell, responsive mobile navigation, a narrow-screen-safe landing header, and responsive spacing for banners and controls.
 - [x] Workout set entry uses stacked, touch-friendly mobile cards with full-width weight, reps, RPE, rest, completion, and remove controls; the compact desktop set table remains available from tablet widths upward.
 - [x] Landing, dashboard, history, progress, measurements, analytics, settings, onboarding, and workout logging were visually checked at phone and desktop widths; the full workout editor no longer expands the phone page width.
+
+
+## Landing-page reference redesign
+
+- [x] Restyle only the public landing route with the supplied dark editorial performance reference: near-black surfaces, signal orange accent, condensed display hierarchy, telemetry preview, feature cards, comparison matrix, CTA, and footer while leaving internal app routes unchanged.
+- [x] Preserve working landing CTAs for account creation, login, and live demo navigation, with responsive behavior at desktop and phone widths.
