@@ -100,3 +100,8 @@ A new workout log opens with a short “What are you training today?” gate. It
 ## Selected-muscle propagation correction
 
 The new-log focus selections are passed into the workout editor as the available Targeting muscle options. The first selected group initializes the first exercise and newly added exercises; users can switch each exercise among the selected groups. Biceps and Triceps are separate focus options, and the generic Arms option is removed. Existing saved exercise muscle values remain visible when editing.
+
+
+## Responsive layout refinement
+
+GymTrack uses viewport-safe shell containers and responsive spacing across the app. On phones, the landing header prioritizes the primary account action, the mobile drawer fits narrow screens, and the workout editor switches from the desktop set table to stacked touch-friendly set cards. Tablet and desktop widths retain the denser table and two-column workout layout.

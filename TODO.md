@@ -66,3 +66,10 @@
 
 - [x] The new-log muscle chooser uses Biceps and Triceps as separate options and does not show Arms.
 - [x] The workout editor's Targeting muscle selector uses the muscle group(s) selected before the session; the first selected group is the default for the first and newly added exercises instead of hardcoded Chest, while existing saved values remain available when editing.
+
+
+## Responsive mobile optimization
+
+- [x] GymTrack layouts are constrained to the viewport from 320px upward, with overflow protection in the global shell, responsive mobile navigation, a narrow-screen-safe landing header, and responsive spacing for banners and controls.
+- [x] Workout set entry uses stacked, touch-friendly mobile cards with full-width weight, reps, RPE, rest, completion, and remove controls; the compact desktop set table remains available from tablet widths upward.
+- [x] Landing, dashboard, history, progress, measurements, analytics, settings, onboarding, and workout logging were visually checked at phone and desktop widths; the full workout editor no longer expands the phone page width.
