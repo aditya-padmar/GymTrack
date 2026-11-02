@@ -115,3 +115,8 @@ The public landing page now uses a dense, dark performance-editorial treatment b
 ## Exact reference alignment
 
 The supplied HTML reference is the source of truth for the landing pass: its copy, orange primary-container color, dark surface hierarchy, Bebas Neue display family, Space Grotesk body family, header labels, telemetry control labels, feature metadata, comparison vocabulary, and CTA structure are reflected in the React landing route. Shared app styles remain separate and unchanged in behavior.
+
+
+## Readability and glow refinement
+
+The landing route now uses a larger display scale and stronger readable labels across the header, hero, telemetry preview, feature cards, and CTA controls. Reference-style glow is intentionally restrained: a broad warm ambient bloom, a soft orange text halo on the emphasized hero phrase, orange CTA shadowing, and visible keyboard focus outlines.

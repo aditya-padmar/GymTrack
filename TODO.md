@@ -85,3 +85,9 @@
 
 - [x] Re-aligned the landing page to the supplied HTML reference: Bebas Neue / Space Grotesk typography, exact orange/surface palette, telemetry system overline, workout logger labels, 7D-style chart panel, reference feature copy, comparison language, and CTA hierarchy.
 - [x] Restored the shared Tailwind stylesheet directives after the landing-only stylesheet update and verified the internal dashboard remains visually intact.
+
+
+## Landing readability and glow refinement
+
+- [x] Enlarged landing navigation, wordmark, hero headline, body copy, telemetry labels, metrics, feature headings, and CTA buttons for clearer reading at desktop and phone widths.
+- [x] Added subtle warm ambient glow behind the hero, orange headline glow on the emphasized phrase, stronger CTA button glow, and keyboard focus outlines while keeping the effect limited to the landing route.
