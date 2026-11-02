@@ -192,3 +192,67 @@ button, input, select, textarea { font: inherit; }
   .landing-rest-control strong { font-size: .72rem; }
   .landing-rest-control button { height: 1.45rem; width: 1.45rem; }
 }
+
+/* Interactive telemetry table treatment. */
+.landing-telemetry-wrap { background: #1a1c20; border-color: rgba(255,255,255,.035); border-radius: .2rem; box-shadow: 0 28px 90px rgba(0,0,0,.3); }
+.landing-telemetry-top { background: #0e1013; padding: 1rem 1.15rem; }
+.landing-telemetry-tabs { background: #0d0f12; border-bottom: 0; display: flex; gap: .15rem; margin-top: 1rem; padding: .25rem; }
+.landing-telemetry-tabs button { background: transparent; border: 0; color: #979aa2; cursor: pointer; font-size: inherit; font-weight: 900; letter-spacing: .05em; padding: .7rem 1rem; text-transform: uppercase; transition: background .2s ease, color .2s ease, box-shadow .2s ease; }
+.landing-telemetry-tabs button:hover, .landing-telemetry-tabs button.active { background: var(--landing-orange); box-shadow: 0 0 18px rgba(255,94,30,.35); color: #171717; }
+.landing-session-metrics { background: #202226; display: grid; grid-template-columns: 1fr 1fr 1fr; margin-top: .7rem; padding: 1.15rem 1.2rem; }
+.landing-session-metrics div { display: flex; flex-direction: column; gap: .4rem; }
+.landing-session-metrics span, .landing-volume-stats span { color: #a2a4aa; font-size: .62rem; font-weight: 900; letter-spacing: .08em; }
+.landing-session-metrics strong { color: #f0f0f2; font-size: 1.55rem; line-height: 1; }
+.landing-session-metrics div:nth-child(2) strong { color: #ffad91; }
+.landing-session-metrics small { color: #ff5e1e; font-size: .55rem; }
+.landing-set-table { display: flex; flex-direction: column; gap: .35rem; margin-top: .8rem; }
+.landing-set-head, .landing-set-row { display: grid; gap: .75rem; grid-template-columns: .45fr 1.25fr 1.1fr .65fr .55fr; }
+.landing-set-head { color: #aaaeb7; font-size: .62rem; font-weight: 900; letter-spacing: .08em; padding: .65rem .85rem; text-transform: uppercase; }
+.landing-set-row { align-items: center; background: #25272b; border: 1px solid transparent; color: #c9cbd0; cursor: pointer; font: inherit; padding: .65rem .85rem; text-align: left; transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.landing-set-row:hover, .landing-set-row:focus-visible { background: #2c2e32; border-color: rgba(255,94,30,.7); box-shadow: 0 0 22px rgba(255,94,30,.18); transform: translateY(-1px); }
+.landing-set-row > span:first-child { color: #ffb29a; font-size: 1.5rem; }
+.landing-set-row > strong { color: #f0f0f2; font-size: 1.35rem; }
+.landing-set-row .set-status { align-items: center; background: #31343a; color: #cfd1d5; display: inline-flex; font-size: 1.05rem; height: 1.75rem; justify-content: center; justify-self: end; width: 1.75rem; }
+.landing-set-row.completed .set-status { background: var(--landing-orange); box-shadow: 0 0 14px rgba(255,94,30,.3); color: #171717; }
+.landing-pr-badge { background: var(--landing-orange); color: #171717; font-size: .55rem; margin-left: .35rem; padding: .18rem .25rem; vertical-align: middle; }
+.landing-set-footer { align-items: center; display: flex; justify-content: space-between; margin-top: .8rem; }
+.landing-set-footer > span { color: #a2a4aa; font-size: .62rem; }
+.landing-set-footer .landing-add-set { background: #2c2e33; margin-top: 0; padding: .65rem .85rem; }
+.landing-set-footer .landing-add-set:hover { background: var(--landing-orange); color: #171717; }
+.landing-volume-panel { background: #0f1114; }
+.landing-volume-heading { align-items: flex-start; display: flex; justify-content: space-between; }
+.landing-volume-heading > div > strong { display: block; font-size: 3.1rem; margin-top: .55rem; }
+.landing-volume-heading > div > strong small { color: var(--landing-orange); font-size: .6rem; letter-spacing: .08em; }
+.landing-range-switch { background: #24262b; display: flex; padding: .2rem; }
+.landing-range-switch button { background: transparent; border: 0; color: #c7c9ce; cursor: pointer; font-size: .62rem; font-weight: 900; padding: .55rem .75rem; }
+.landing-range-switch button:hover, .landing-range-switch button.active { background: var(--landing-orange); box-shadow: 0 0 15px rgba(255,94,30,.32); color: #171717; }
+.landing-bars { align-items: flex-end; gap: .5rem; height: 185px; margin-top: 1rem; padding: 1rem .45rem 0; }
+.landing-bar-item { align-items: center; align-self: stretch; display: flex; flex: 1; flex-direction: column; justify-content: flex-end; }
+.landing-bar-item span { background: #303237; display: block; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; width: 100%; }
+.landing-bar-item:hover span { background: #62666f; box-shadow: 0 0 18px rgba(255,255,255,.15); transform: translateY(-3px); }
+.landing-bar-item span.hot, .landing-bar-item:hover span.hot { background: var(--landing-orange); box-shadow: 0 0 22px rgba(255,94,30,.35); }
+.landing-bar-item small { color: #a2a4aa; font-size: .62rem; margin-top: .55rem; }
+.landing-volume-stats { display: grid; gap: .65rem; grid-template-columns: 1fr 1fr; margin-top: 1.2rem; }
+.landing-volume-stats > div { background: #202226; display: flex; flex-direction: column; gap: .35rem; padding: .85rem; }
+.landing-volume-stats b { font-size: 1.55rem; }
+.landing-volume-stats small { color: #a2a4aa; font-size: .6rem; }
+.landing-volume-stats em { color: var(--landing-orange); font-style: normal; float: right; }
+@media (max-width: 640px) {
+  .landing-telemetry-top { padding: .75rem; }
+  .landing-telemetry-tabs { overflow-x: auto; }
+  .landing-telemetry-tabs button { flex: 0 0 auto; font-size: .5rem; padding: .65rem .7rem; }
+  .landing-session-metrics { padding: .8rem; }
+  .landing-session-metrics span, .landing-volume-stats span { font-size: .48rem; }
+  .landing-session-metrics strong { font-size: 1rem; }
+  .landing-set-head, .landing-set-row { gap: .35rem; grid-template-columns: .35fr 1.25fr .95fr .45fr .4fr; padding-left: .45rem; padding-right: .45rem; }
+  .landing-set-head { font-size: .46rem; }
+  .landing-set-row { font-size: .58rem; }
+  .landing-set-row > span:first-child { font-size: 1rem; }
+  .landing-set-row > strong { font-size: .9rem; }
+  .landing-set-row .set-status { font-size: .8rem; height: 1.4rem; width: 1.4rem; }
+  .landing-set-footer > span { font-size: .48rem; }
+  .landing-volume-heading > div > strong { font-size: 2.2rem; }
+  .landing-range-switch button { font-size: .5rem; padding: .45rem .5rem; }
+  .landing-bars { height: 150px; }
+  .landing-volume-stats b { font-size: 1.1rem; }
+}

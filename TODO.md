@@ -103,3 +103,9 @@
 
 - [x] Tuned the landing route for the supplied full-screen desktop reference with a 1540px content frame, larger header proportions, active Features navigation state, Testimonials label, reference hero line break, stronger desktop type scale, wider body copy, and increased CTA/proof spacing.
 - [x] Lowered the telemetry preview into the viewport composition and matched its top control strip with a 00:00 rest readout plus pause/reset controls; retained mobile readability and verified the 390px layout.
+
+
+## Interactive telemetry table redesign
+
+- [x] Rebuilt the landing telemetry block around the supplied reference: inset active-session bar, exercise tabs, three-metric summary strip, row-based set table, orange PR badge, completion controls, tonnage displacement chart, range selector, and two lower stat cards.
+- [x] Added interactive behavior: exercise tabs switch active state, 7D/30D/1Y range controls switch active state, table rows toggle completed/incomplete states, and bars, rows, tabs, buttons, orange status blocks, and stat surfaces receive hover/focus feedback with restrained orange glow.

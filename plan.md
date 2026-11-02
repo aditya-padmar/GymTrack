@@ -130,3 +130,8 @@ The landing telemetry section now flows into a three-panel image strip using the
 ## Full-screen landing composition
 
 The desktop landing route now follows the supplied 1920px reference as a viewport composition rather than only a component style: the header and telemetry frame use a 1540px reading width, hero spacing is intentionally tall, the headline breaks before PROGRESS, the copy wraps to the reference rhythm, and the CTA/proof row sits above a lower telemetry panel. Mobile overrides remain separate.
+
+
+## Interactive telemetry table redesign
+
+The landing preview now uses a reference-style telemetry cockpit rather than a static table. State is local to the landing demo: exercise tabs, time-range pills, and set completion rows respond to user input. Interaction feedback uses the orange signal color for active and completed states, subtle glow on hover, focus-visible outlines, and quiet charcoal surfaces for the inactive states.
