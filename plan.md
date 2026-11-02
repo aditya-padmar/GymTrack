@@ -125,3 +125,8 @@ The landing route now uses a larger display scale and stronger readable labels a
 ## Reference photo-card section
 
 The landing telemetry section now flows into a three-panel image strip using the supplied reference visuals. Each card uses the reference's full-bleed photo treatment, dark bottom gradient, orange eyebrow label, condensed caption, rounded corners, and responsive single-column fallback on mobile.
+
+
+## Full-screen landing composition
+
+The desktop landing route now follows the supplied 1920px reference as a viewport composition rather than only a component style: the header and telemetry frame use a 1540px reading width, hero spacing is intentionally tall, the headline breaks before PROGRESS, the copy wraps to the reference rhythm, and the CTA/proof row sits above a lower telemetry panel. Mobile overrides remain separate.

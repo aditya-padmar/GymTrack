@@ -1,4 +1,4 @@
-import { Activity, ArrowRight, BarChart3, Check, Dumbbell, Gauge, LockKeyhole, ShieldCheck, Timer, TrendingUp, Zap } from 'lucide-react';
+import { Activity, ArrowRight, BarChart3, Check, Dumbbell, Gauge, LockKeyhole, Pause, RotateCcw, ShieldCheck, Timer, TrendingUp, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const shots = [
@@ -19,7 +19,7 @@ export function Landing() {
     <header className="landing-header">
       <Link to="/" className="landing-wordmark"><span className="landing-mark">G</span><span>GYMTRACK</span></Link>
       <nav className="landing-nav">
-        <a href="#features">Features</a><a href="#preview">Interactive preview</a><a href="#analytics">Analytics</a><a href="#pricing">Pricing</a><a href="#compare">Terminology</a>
+          <a className="active" href="#features">Features</a><a href="#preview">Interactive preview</a><a href="#analytics">Analytics</a><a href="#pricing">Pricing</a><a href="#compare">Testimonials</a>
       </nav>
       <div className="landing-header-actions"><Link to="/login" className="landing-login">Log in</Link><Link to="/signup" className="landing-button landing-button-orange">Start tracking free <ArrowRight size={13} /></Link><span className="landing-avatar">A</span></div>
     </header>
@@ -27,14 +27,14 @@ export function Landing() {
     <main>
       <section className="landing-hero">
         <div className="landing-eyebrow"><span /> TELEMETRY SYSTEM v2.4 // READY FOR PRODUCTION</div>
-        <h1>LOG THE WORK. <em>SEE THE PROGRESS.</em></h1>
+        <h1>LOG THE WORK. <em>SEE THE<span className="landing-desktop-break"><br /></span> PROGRESS.</em></h1>
         <p className="landing-hero-copy">GymTrack is your private performance log for workouts you actually do.<br className="hidden sm:block" /> Record weights, sets, reps, and let the evidence stack up. Zero fluff. Zero unsolicited routines.</p>
         <div className="landing-hero-actions"><Link to="/signup" className="landing-button landing-button-orange">Start tracking free <ArrowRight size={14} /></Link><Link to="/dashboard" className="landing-button landing-button-dark"><span className="landing-play">▶</span> Explore live demo</Link></div>
         <div className="landing-proof-row"><span><Check size={12} /> No workout plan pushes</span><span><LockKeyhole size={12} /> 100% private by design</span><span><TrendingUp size={12} /> Pure progress overload</span></div>
       </section>
 
       <section id="preview" className="landing-telemetry-wrap">
-        <div className="landing-telemetry-top"><span><i className="landing-status-dot" /> Active session // hypertrophy A <b className="hidden sm:inline">| Started: 07:14 AM</b></span><span><Timer size={12} /> Rest timer <strong>01:45</strong></span></div>
+        <div className="landing-telemetry-top"><span><i className="landing-status-dot" /> Active session // hypertrophy A <b className="hidden sm:inline">| Started: 07:14 AM</b></span><span className="landing-rest-control"><Timer size={14} /> Rest timer <strong>00:00</strong><button aria-label="Pause rest timer"><Pause size={12} /></button><button aria-label="Reset rest timer"><RotateCcw size={12} /></button></span></div>
         <div className="landing-telemetry-tabs"><span className="active">Barbell bench press</span><span>Barbell back squat</span><span>Romanian deadlift</span></div>
         <div className="landing-telemetry-grid">
           <div className="landing-set-panel"><div className="landing-panel-kicker">LAST RECORDED SESSION</div><div className="landing-metric-row"><strong>122.5 <small>KG</small></strong><span>Target rep range<br /><b>8.0–9.0</b></span><span>Prev session vol<br /><b>2,480 kg</b></span></div><div className="landing-set-table"><span>SET</span><span>PREVIOUS</span><span>TARGET</span><span>REPS</span><span>STATUS</span>{[['1','100.0 x 8','100.0','8','✓'],['2','105.0 x 6','105.0','6','✓'],['3','110.0 x 4','110.0','4','○']].map((row) => row.map((value, index) => <span key={`${row[0]}-${index}`} className={index === 4 ? 'set-status' : ''}>{value}</span>))}</div><button className="landing-add-set">+ ADD SET</button><div className="landing-note">◎ Every checkbox is yours to mark completed</div></div>

@@ -97,3 +97,9 @@
 
 - [x] Replaced the abstract gradient tiles below the telemetry table with the supplied three-panel training imagery, using the exact reference captions: Barbell Workflow / Knurled Steel Discipline, Maximal Readout / Calculated Volume, and No Distractions / Every Set Counted.
 - [x] Matched the reference card treatment with full-width three-column layout, dark bottom fade overlays, rounded corners, responsive stacking, and larger desktop card height.
+
+
+## Full-screen landing composition
+
+- [x] Tuned the landing route for the supplied full-screen desktop reference with a 1540px content frame, larger header proportions, active Features navigation state, Testimonials label, reference hero line break, stronger desktop type scale, wider body copy, and increased CTA/proof spacing.
+- [x] Lowered the telemetry preview into the viewport composition and matched its top control strip with a 00:00 rest readout plus pause/reset controls; retained mobile readability and verified the 390px layout.

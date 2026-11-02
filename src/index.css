@@ -34,6 +34,7 @@ button, input, select, textarea { font: inherit; }
 .landing-wordmark { align-items: center; display: inline-flex; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 1.12rem; font-weight: 400; gap: .55rem; letter-spacing: .12em; white-space: nowrap; }
 .landing-mark { align-items: center; background: var(--landing-orange); color: #111; display: inline-flex; font-size: .85rem; height: 1.55rem; justify-content: center; width: 1.55rem; }
 .landing-nav { display: flex; gap: 1.7rem; margin-left: auto; margin-right: auto; text-transform: uppercase; font-size: .68rem; font-weight: 800; letter-spacing: .1em; color: #a7a9af; }
+.landing-nav a.active { color: var(--landing-orange); }
 .landing-nav a:hover, .landing-login:hover { color: var(--landing-orange); }
 .landing-header-actions { align-items: center; display: flex; gap: .55rem; }
 .landing-login { color: #d1d2d5; font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -151,4 +152,43 @@ button, input, select, textarea { font: inherit; }
   .landing-proof-row { font-size: .52rem; gap: .85rem; }
   .landing-telemetry-top, .landing-telemetry-tabs { font-size: .55rem; }
   .landing-metric-row strong, .landing-volume-panel > strong { font-size: 2.25rem; }
+}
+
+/* Full-screen desktop composition from the supplied landing-page reference. */
+.landing-desktop-break { display: none; }
+.landing-rest-control { align-items: center; display: inline-flex !important; gap: .55rem !important; }
+.landing-rest-control { white-space: nowrap; }
+.landing-rest-control strong { color: var(--landing-orange); font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; letter-spacing: .06em; }
+.landing-rest-control button { align-items: center; background: #24272d; border: 0; color: #d7d8da; display: inline-flex; height: 1.8rem; justify-content: center; width: 1.8rem; }
+.landing-rest-control button:hover { background: var(--landing-orange); color: #171717; }
+@media (min-width: 901px) {
+  .landing-header { max-width: 1540px; padding: 1.45rem 2.5rem; }
+  .landing-wordmark { font-size: 1.35rem; }
+  .landing-mark { font-size: 1rem; height: 1.8rem; width: 1.8rem; }
+  .landing-nav { gap: 2rem; font-size: .78rem; }
+  .landing-login { font-size: .78rem; }
+  .landing-avatar { font-size: .8rem; height: 2rem; width: 2rem; }
+  .landing-header-actions .landing-button { font-size: .78rem; padding: 1rem 1.55rem; }
+  .landing-hero { max-width: 1280px; padding: 3.5rem 1.25rem 10rem; }
+  .landing-hero h1 { font-size: clamp(5.8rem, 7.6vw, 8.8rem); }
+  .landing-hero h1 { margin-top: 2rem; }
+  .landing-desktop-break { display: inline; }
+  .landing-hero-copy { font-size: 1.18rem; line-height: 1.65; margin-top: 2.4rem; max-width: 820px; }
+  .landing-hero-actions { gap: 1rem; margin-top: 3.2rem; }
+  .landing-hero-actions .landing-button { font-size: .86rem; padding: 1.15rem 1.7rem; }
+  .landing-proof-row { font-size: .7rem; gap: 1.35rem; margin-top: 3.4rem; }
+  .landing-proof-row span { background: rgba(26,28,32,.72); padding: .7rem 2rem; }
+  .landing-telemetry-wrap { max-width: 1540px; padding: 1.15rem; width: calc(100% - 5rem); }
+  .landing-telemetry-top { font-size: .78rem; }
+  .landing-telemetry-tabs { font-size: .76rem; margin-top: 1rem; }
+  .landing-telemetry-tabs span { padding: .85rem .45rem; }
+  .landing-telemetry-grid { gap: 1rem; margin-top: 1rem; }
+  .landing-set-panel, .landing-volume-panel { padding: 1.4rem; }
+  .landing-shot-grid { gap: 1rem; margin-top: 3.8rem; max-width: 1600px; padding: 0 2.5rem; }
+}
+@media (max-width: 640px) {
+  .landing-desktop-break { display: none; }
+  .landing-rest-control { gap: .35rem !important; }
+  .landing-rest-control strong { font-size: .72rem; }
+  .landing-rest-control button { height: 1.45rem; width: 1.45rem; }
 }
