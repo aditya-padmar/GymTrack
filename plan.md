@@ -120,3 +120,8 @@ The supplied HTML reference is the source of truth for the landing pass: its cop
 ## Readability and glow refinement
 
 The landing route now uses a larger display scale and stronger readable labels across the header, hero, telemetry preview, feature cards, and CTA controls. Reference-style glow is intentionally restrained: a broad warm ambient bloom, a soft orange text halo on the emphasized hero phrase, orange CTA shadowing, and visible keyboard focus outlines.
+
+
+## Reference photo-card section
+
+The landing telemetry section now flows into a three-panel image strip using the supplied reference visuals. Each card uses the reference's full-bleed photo treatment, dark bottom gradient, orange eyebrow label, condensed caption, rounded corners, and responsive single-column fallback on mobile.

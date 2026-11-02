@@ -91,3 +91,9 @@
 
 - [x] Enlarged landing navigation, wordmark, hero headline, body copy, telemetry labels, metrics, feature headings, and CTA buttons for clearer reading at desktop and phone widths.
 - [x] Added subtle warm ambient glow behind the hero, orange headline glow on the emphasized phrase, stronger CTA button glow, and keyboard focus outlines while keeping the effect limited to the landing route.
+
+
+## Reference photo-card section
+
+- [x] Replaced the abstract gradient tiles below the telemetry table with the supplied three-panel training imagery, using the exact reference captions: Barbell Workflow / Knurled Steel Discipline, Maximal Readout / Calculated Volume, and No Distractions / Every Set Counted.
+- [x] Matched the reference card treatment with full-width three-column layout, dark bottom fade overlays, rounded corners, responsive stacking, and larger desktop card height.

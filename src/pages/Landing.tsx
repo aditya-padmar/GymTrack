@@ -2,9 +2,9 @@ import { Activity, ArrowRight, BarChart3, Check, Dumbbell, Gauge, LockKeyhole, S
 import { Link } from 'react-router-dom';
 
 const shots = [
-  { label: 'DISCIPLINE', title: 'Knurled steel discipline', className: 'landing-shot landing-shot-steel' },
-  { label: 'VOLUME', title: 'Calculated volume', className: 'landing-shot landing-shot-volume' },
-  { label: 'FORM', title: 'Every set counted', className: 'landing-shot landing-shot-form' },
+  { label: 'BARBELL WORKFLOW', title: 'Knurled steel discipline', className: 'landing-shot landing-shot-steel', src: '/landing-steel.jpg' },
+  { label: 'MAXIMAL READOUT', title: 'Calculated volume', className: 'landing-shot landing-shot-volume', src: '/landing-volume.jpg' },
+  { label: 'NO DISTRACTIONS', title: 'Every set counted', className: 'landing-shot landing-shot-form', src: '/landing-form.jpg' },
 ];
 
 const comparisonRows = [
@@ -42,7 +42,7 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="landing-shot-grid">{shots.map((shot) => <div key={shot.title} className={shot.className}><div className="landing-shot-overlay"><span>{shot.label}</span><strong>{shot.title}</strong></div></div>)}</section>
+      <section className="landing-shot-grid">{shots.map((shot) => <div key={shot.title} className={shot.className} style={{ backgroundImage: `url(${shot.src})` }}><div className="landing-shot-overlay"><span>{shot.label}</span><strong>{shot.title}</strong></div></div>)}</section>
 
       <section id="features" className="landing-section landing-record-section"><div className="landing-section-heading"><div><span className="landing-section-kicker">ENGINEERED CLARITY</span><h2>A CLEARER RECORD.<br /><em>WITHOUT THE NOISE.</em></h2></div><p>Most apps treat weightlifting like a cartoon game. GymTrack gives you mechanical precision and zero advertisements.</p></div><div className="landing-feature-grid"><Feature icon={Dumbbell} index="01 // TELEMETRY CAPTURE" title="Log your sessions fast" text="Capture exercises, sets, reps, exact RPE values, rest countdowns, and set-specific notes within seconds. Designed to be tapped with chalk on your thumbs without confusing submenus." /><Feature icon={TrendingUp} index="02 // HISTORICAL AUDIT" title="Compare performance" text="See what you lifted last week, 3 months ago, or last winter for the exact same repetition scheme. Automatic 1RM overlays reveal true micro-gains." /><Feature icon={BarChart3} index="03 // VOLUME MATHEMATICS" title="Read the trend" text="Comprehensive volume load curves across microcycles, muscle group frequency distributions, and fatigue indicators. Prevent overreaching before plateaus occur." /></div></section>
 
