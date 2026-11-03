@@ -115,3 +115,8 @@
 
 - [x] Replaced the 340px-wide card crops with restored high-resolution PNG assets at roughly 1746–1748px wide, preserving the original subjects, composition, lighting, and card treatment.
 - [x] Updated the landing cards to use the restored assets and verified the rendered full-page desktop section after the production build.
+
+
+## Variable daily volume chart
+
+- [x] Fixed the weekly chart bar sizing so each day respects its own volume percentage instead of flex-stretching to the same height; the data now renders a visibly variable Monday–Sunday profile with Friday highlighted.

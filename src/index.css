@@ -228,7 +228,7 @@ button, input, select, textarea { font: inherit; }
 .landing-range-switch button:hover, .landing-range-switch button.active { background: var(--landing-orange); box-shadow: 0 0 15px rgba(255,94,30,.32); color: #171717; }
 .landing-bars { align-items: flex-end; gap: .5rem; height: 185px; margin-top: 1rem; padding: 1rem .45rem 0; }
 .landing-bar-item { align-items: center; align-self: stretch; display: flex; flex: 1; flex-direction: column; justify-content: flex-end; }
-.landing-bar-item span { background: #303237; display: block; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; width: 100%; }
+.landing-bar-item span { background: #303237; display: block; flex: 0 0 auto; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; width: 100%; }
 .landing-bar-item:hover span { background: #62666f; box-shadow: 0 0 18px rgba(255,255,255,.15); transform: translateY(-3px); }
 .landing-bar-item span.hot, .landing-bar-item:hover span.hot { background: var(--landing-orange); box-shadow: 0 0 22px rgba(255,94,30,.35); }
 .landing-bar-item small { color: #a2a4aa; font-size: .62rem; margin-top: .55rem; }

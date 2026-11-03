@@ -140,3 +140,8 @@ The landing preview now uses a reference-style telemetry cockpit rather than a s
 ## High-resolution landing card imagery
 
 The photo-card section uses restored high-resolution source assets instead of stretching the original 340px crops. The restoration preserves the supplied gym scenes and lets the existing CSS crop and dark caption overlay operate over substantially sharper source imagery at desktop card width.
+
+
+## Variable daily volume chart
+
+The landing telemetry chart keeps daily values in a distinct seven-point series and now removes the flex growth that was flattening all bars to equal height. Each bar uses its inline daily percentage, with the highlighted training day retaining the orange glow.
