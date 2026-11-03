@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const shots = [
-  { label: 'BARBELL WORKFLOW', title: 'Knurled steel discipline', className: 'landing-shot landing-shot-steel', src: '/landing-steel.jpg' },
-  { label: 'MAXIMAL READOUT', title: 'Calculated volume', className: 'landing-shot landing-shot-volume', src: '/landing-volume.jpg' },
-  { label: 'NO DISTRACTIONS', title: 'Every set counted', className: 'landing-shot landing-shot-form', src: '/landing-form.jpg' },
+  { label: 'BARBELL WORKFLOW', title: 'Knurled steel discipline', className: 'landing-shot landing-shot-steel', src: '/landing-steel-hd.png' },
+  { label: 'MAXIMAL READOUT', title: 'Calculated volume', className: 'landing-shot landing-shot-volume', src: '/landing-volume-hd.png' },
+  { label: 'NO DISTRACTIONS', title: 'Every set counted', className: 'landing-shot landing-shot-form', src: '/landing-form-hd.png' },
 ];
 
 const comparisonRows = [

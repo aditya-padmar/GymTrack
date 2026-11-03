@@ -135,3 +135,8 @@ The desktop landing route now follows the supplied 1920px reference as a viewpor
 ## Interactive telemetry table redesign
 
 The landing preview now uses a reference-style telemetry cockpit rather than a static table. State is local to the landing demo: exercise tabs, time-range pills, and set completion rows respond to user input. Interaction feedback uses the orange signal color for active and completed states, subtle glow on hover, focus-visible outlines, and quiet charcoal surfaces for the inactive states.
+
+
+## High-resolution landing card imagery
+
+The photo-card section uses restored high-resolution source assets instead of stretching the original 340px crops. The restoration preserves the supplied gym scenes and lets the existing CSS crop and dark caption overlay operate over substantially sharper source imagery at desktop card width.

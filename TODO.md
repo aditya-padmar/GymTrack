@@ -109,3 +109,9 @@
 
 - [x] Rebuilt the landing telemetry block around the supplied reference: inset active-session bar, exercise tabs, three-metric summary strip, row-based set table, orange PR badge, completion controls, tonnage displacement chart, range selector, and two lower stat cards.
 - [x] Added interactive behavior: exercise tabs switch active state, 7D/30D/1Y range controls switch active state, table rows toggle completed/incomplete states, and bars, rows, tabs, buttons, orange status blocks, and stat surfaces receive hover/focus feedback with restrained orange glow.
+
+
+## High-resolution landing card imagery
+
+- [x] Replaced the 340px-wide card crops with restored high-resolution PNG assets at roughly 1746–1748px wide, preserving the original subjects, composition, lighting, and card treatment.
+- [x] Updated the landing cards to use the restored assets and verified the rendered full-page desktop section after the production build.
