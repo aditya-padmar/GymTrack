@@ -142,3 +142,8 @@
 ## Comparison-section reference redesign
 
 - [x] Restyle the comparison section to match the uploaded reference: centered comparison intro, rounded charcoal comparison panel, capability/attribute header, row subtitles, dim generic-app column, and light-orange GymTrack Core column with lightning accent.
+
+
+## Engineered Clarity reference redesign
+
+- [x] Restyle the Engineered Clarity section to match the uploaded reference: wide two-column intro, large two-line condensed headline, larger supporting copy, taller charcoal feature cards, stronger orange icon tiles, and larger telemetry footers.

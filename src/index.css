@@ -385,3 +385,34 @@ button, input, select, textarea { font: inherit; }
   .compare-row strong { font-size: .76rem; }
   .compare-row small { font-size: .58rem; }
 }
+
+/* Uploaded Engineered Clarity reference treatment. */
+.landing-record-section { margin-top: 8rem; }
+.landing-record-section .landing-section-heading { align-items: center; grid-template-columns: 1.18fr .82fr; }
+.landing-record-section .landing-section-kicker { color: var(--landing-orange); }
+.landing-record-section h2 { color: #f0f1f4; font-size: clamp(4rem, 5vw, 6.2rem); line-height: .88; }
+.landing-record-line { display: block; white-space: nowrap; }
+.landing-record-section h2 em { color: #dfe2ea; }
+.landing-record-section .landing-section-heading p { color: #d1d4db; font-size: 1.1rem; line-height: 1.65; max-width: 510px; }
+.landing-record-section .landing-feature-grid { gap: 1.1rem; margin-top: 3rem; }
+.landing-record-section .landing-feature-card { background: #1d1f23; border: 1px solid rgba(255,255,255,.055); min-height: 355px; padding: 1.55rem; }
+.landing-record-section .landing-feature-card:hover { background: #202328; border-color: rgba(255,94,30,.55); box-shadow: 0 16px 35px rgba(0,0,0,.2); transform: translateY(-2px); }
+.landing-record-section .landing-feature-icon { background: #2a2c31; color: var(--landing-orange); height: 3.2rem; width: 3.2rem; }
+.landing-record-section .landing-feature-card > span { color: #d6d8de; font-size: .66rem; margin-top: 1.45rem; }
+.landing-record-section .landing-feature-card h3 { color: #f0f1f4; font-size: 2rem; margin-top: .65rem; }
+.landing-record-section .landing-feature-card p { color: #d0d3da; font-size: .92rem; line-height: 1.7; margin-top: .75rem; }
+.landing-record-section .landing-feature-meta { background: #111316; margin-top: 1.6rem; padding: .9rem; }
+.landing-record-section .landing-feature-meta > div:first-child { color: #d1d4dc; font-size: .62rem; }
+.landing-record-section .landing-feature-meta b { color: #ffb29a; font-size: .62rem; }
+.landing-record-section .landing-feature-line { background: #282b30; margin-top: .7rem; }
+@media (max-width: 640px) {
+  .landing-record-section { margin-top: 5rem; }
+  .landing-record-section .landing-section-heading { grid-template-columns: 1fr; }
+  .landing-record-section h2 { font-size: clamp(3.5rem, 15vw, 5.2rem); }
+  .landing-record-line { white-space: normal; }
+  .landing-record-section .landing-section-heading p { font-size: .9rem; }
+  .landing-record-section .landing-feature-grid { margin-top: 2rem; }
+  .landing-record-section .landing-feature-card { min-height: 320px; padding: 1.2rem; }
+  .landing-record-section .landing-feature-card h3 { font-size: 1.8rem; }
+  .landing-record-section .landing-feature-card p { font-size: .8rem; }
+}

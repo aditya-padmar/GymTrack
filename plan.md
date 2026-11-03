@@ -165,3 +165,8 @@ The final call-to-action will become a contained editorial panel: rounded charco
 ## Comparison-section reference redesign
 
 The comparison block will use a more editorial matrix: a centered orange kicker and condensed heading, followed by a rounded charcoal panel. Each capability row carries a small explanatory subtitle, generic fitness apps remain visually muted, and GymTrack Core is emphasized with a light-orange accent and lightning marker.
+
+
+## Engineered Clarity reference redesign
+
+The feature section will adopt the uploaded editorial layout: the section label and large two-line condensed headline occupy the left side, explanatory copy sits in a balanced right column, and three taller charcoal cards use orange icon tiles, readable supporting copy, and telemetry footer bars with clear metric hierarchy.
