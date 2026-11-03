@@ -132,3 +132,8 @@
 
 - [x] Darkened the footer section to a deeper near-black band while keeping the rest of the landing page unchanged.
 - [x] Enlarged footer description, column labels, links, contact text, and copyright copy; shifted the footer typography to a readable light-orange palette with brighter hover states.
+
+
+## CTA reference redesign
+
+- [x] Restyle the final CTA block to match the uploaded reference: rounded charcoal panel, centered dumbbell badge, oversized two-line headline, centered supporting copy, wide email/access row, warm orange ambient glow, and responsive mobile stacking.

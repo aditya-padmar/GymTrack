@@ -155,3 +155,8 @@ The lower landing sections now use a stepped type scale rather than tiny editori
 ## Footer contrast and typography refinement
 
 The footer now closes the page with a darker full-width band, creating a clear separation from the lighter charcoal landing surfaces above. Its supporting copy, navigation, contact address, and legal line use a larger light-orange scale, with a brighter hover state for links and responsive reductions only on narrow screens.
+
+
+## CTA reference redesign
+
+The final call-to-action will become a contained editorial panel: rounded charcoal surface, centered dumbbell marker, large condensed two-line headline with white and orange emphasis, readable centered copy, wide dark email field paired with an orange access button, and a restrained orange glow concentrated toward the lower-right edge.
