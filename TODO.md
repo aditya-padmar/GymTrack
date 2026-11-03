@@ -137,3 +137,8 @@
 ## CTA reference redesign
 
 - [x] Restyle the final CTA block to match the uploaded reference: rounded charcoal panel, centered dumbbell badge, oversized two-line headline, centered supporting copy, wide email/access row, warm orange ambient glow, and responsive mobile stacking.
+
+
+## Comparison-section reference redesign
+
+- [x] Restyle the comparison section to match the uploaded reference: centered comparison intro, rounded charcoal comparison panel, capability/attribute header, row subtitles, dim generic-app column, and light-orange GymTrack Core column with lightning accent.

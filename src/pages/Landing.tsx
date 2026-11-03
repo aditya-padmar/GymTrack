@@ -9,10 +9,10 @@ const shots = [
 ];
 
 const comparisonRows = [
-  ['Data ownership & privacy', 'Monetized, shared with third-party fitness ad networks', '100% client-side encrypted & zero data broker leaks'],
-  ['Workout routine autonomy', 'Rigid cookie-cutter algorithms push locked programs', 'Complete freedom: Barbell, dumbbell, cables, or micro-plates'],
-  ['Speed of set entry in the gym', 'Slow 6-tap menus, pop-up upsells, animated celebration screens', 'One-tap repetition and load entry under 2 seconds'],
-  ['Social noise & feed clutter', 'Influencer feeds, community challenges, badge spam', 'Silent, dark-mode cockpit for athletes who execute'],
+  ['Data Ownership & Privacy', 'Who views your biometric logs and workout stats', 'Monetized, shared with third-party fitness ad networks', '100% Client-side encrypted & zero data broker leaks'],
+  ['Workout Routine Autonomy', 'Freedom to log custom periodized progressions', 'Rigid cookie-cutter algorithms push locked programs', 'Complete freedom: Barbell, dumbbell, cables, or micro-plates'],
+  ['Speed of Set Entry in the Gym', 'Time lost between dropsets and PR attempts', 'Slow 6-tap menus, pop-up upsells, animated celebration screens', 'One-tap repetition and load entry under 2 seconds'],
+  ['Social Noise & Feed Clutter', 'The environment during your working sets', 'Influencer feeds, community challenges, badge spam', 'Silent, dark-mode cockpit for athletes who execute'],
 ];
 
 const telemetryExercises = ['Barbell bench press', 'Barbell back squat', 'Romanian deadlift'];
@@ -64,7 +64,7 @@ export function Landing() {
       <section id="features" className="landing-section landing-record-section"><div className="landing-section-heading"><div><span className="landing-section-kicker">ENGINEERED CLARITY</span><h2>A CLEARER RECORD.<br /><em>WITHOUT THE NOISE.</em></h2></div><p>Most apps treat weightlifting like a cartoon game. GymTrack gives you mechanical precision and zero advertisements.</p></div><div className="landing-feature-grid"><Feature icon={Dumbbell} index="01 // TELEMETRY CAPTURE" title="Log your sessions fast" text="Capture exercises, sets, reps, exact RPE values, rest countdowns, and set-specific notes within seconds. Designed to be tapped with chalk on your thumbs without confusing submenus." /><Feature icon={TrendingUp} index="02 // HISTORICAL AUDIT" title="Compare performance" text="See what you lifted last week, 3 months ago, or last winter for the exact same repetition scheme. Automatic 1RM overlays reveal true micro-gains." /><Feature icon={BarChart3} index="03 // VOLUME MATHEMATICS" title="Read the trend" text="Comprehensive volume load curves across microcycles, muscle group frequency distributions, and fatigue indicators. Prevent overreaching before plateaus occur." /></div></section>
 
       <section id="analytics" className="landing-section landing-compare-intro"><span className="landing-section-kicker">UNCOMPROMISING COMPARISON</span><h2>WHY SERIOUS LIFTERS CHOOSE<br /><em>GYMTRACK</em></h2><p>Fitness applications have turned into algorithmic social networks. Here is how we differ from the market standard.</p></section>
-      <section id="compare" className="landing-compare-table"><div className="compare-head"><span>Progressive Overload Telemetry<br /><small>Volume, load, effort, rest — and your own evidence</small></span><span>Generic fitness apps</span><span className="orange-text">GymTrack core</span></div>{comparisonRows.map(([label, generic, core]) => <div className="compare-row" key={label}><strong>{label}</strong><span>{generic}</span><span>{core}</span></div>)}</section>
+      <section id="compare" className="landing-compare-table"><div className="compare-head"><span>Capability // Attribute</span><span>Generic fitness apps</span><span className="orange-text"><Zap size={13} /> GymTrack core</span></div>{comparisonRows.map(([label, detail, generic, core]) => <div className="compare-row" key={label}><div><strong>{label}</strong><small>{detail}</small></div><span>{generic}</span><span className="compare-core">{core}</span></div>)}</section>
 
       <section id="pricing" className="landing-cta"><Dumbbell size={22} /><h2>NO PRESCRIPTIONS. <em>JUST<br />YOUR RECORD.</em></h2><p>Join thousands of lifters documenting genuine athletic progression. Start your first session free—no credit card, no ads.</p><div className="landing-cta-form"><input placeholder="athlete@domain.com" aria-label="Email address" /><Link to="/signup" className="landing-button landing-button-orange">Get access <ArrowRight size={13} /></Link></div></section>
     </main>

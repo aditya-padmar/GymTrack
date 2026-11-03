@@ -160,3 +160,8 @@ The footer now closes the page with a darker full-width band, creating a clear s
 ## CTA reference redesign
 
 The final call-to-action will become a contained editorial panel: rounded charcoal surface, centered dumbbell marker, large condensed two-line headline with white and orange emphasis, readable centered copy, wide dark email field paired with an orange access button, and a restrained orange glow concentrated toward the lower-right edge.
+
+
+## Comparison-section reference redesign
+
+The comparison block will use a more editorial matrix: a centered orange kicker and condensed heading, followed by a rounded charcoal panel. Each capability row carries a small explanatory subtitle, generic fitness apps remain visually muted, and GymTrack Core is emphasized with a light-orange accent and lightning marker.
