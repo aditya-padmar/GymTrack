@@ -120,3 +120,9 @@
 ## Variable daily volume chart
 
 - [x] Fixed the weekly chart bar sizing so each day respects its own volume percentage instead of flex-stretching to the same height; the data now renders a visibly variable Monday–Sunday profile with Friday highlighted.
+
+
+## Lower-page readability and contrast refinement
+
+- [x] Increased the body and metadata type below Engineered Clarity so feature copy, comparison content, footer text, and supporting labels match the stronger hero/table readability scale.
+- [x] Lightened the general landing background and feature/comparison surfaces while keeping the contact CTA section distinctly dark; changed the contact CTA heading, copy, and icon to light orange.

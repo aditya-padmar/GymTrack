@@ -145,3 +145,8 @@ The photo-card section uses restored high-resolution source assets instead of st
 ## Variable daily volume chart
 
 The landing telemetry chart keeps daily values in a distinct seven-point series and now removes the flex growth that was flattening all bars to equal height. Each bar uses its inline daily percentage, with the highlighted training day retaining the orange glow.
+
+
+## Lower-page readability and contrast refinement
+
+The lower landing sections now use a stepped type scale rather than tiny editorial microcopy: supporting paragraphs, feature descriptions, comparison rows, metadata, footer copy, and the contact CTA are all larger and brighter. General surfaces are lifted from near-black to charcoal for separation, while the contact CTA remains the darkest section with light-orange text as the visual close.

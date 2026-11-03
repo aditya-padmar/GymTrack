@@ -256,3 +256,44 @@ button, input, select, textarea { font: inherit; }
   .landing-bars { height: 150px; }
   .landing-volume-stats b { font-size: 1.1rem; }
 }
+
+/* Lower-page readability and contrast pass. */
+.landing-page { background: #15181c; }
+.landing-feature-card, .landing-compare-table { background: #1d2024; }
+.landing-feature-card { border-color: rgba(255,255,255,.11); }
+.landing-section-heading p, .landing-compare-intro p { color: #c1c4cb; font-size: 1rem; }
+.landing-feature-card > span { color: #aeb2ba; font-size: .62rem; }
+.landing-feature-card h3 { font-size: 2.15rem; }
+.landing-feature-card p { color: #c0c3ca; font-size: .9rem; line-height: 1.75; }
+.landing-feature-meta { background: rgba(10,12,15,.55); }
+.landing-feature-meta > div:first-child { color: #b2b5bc; font-size: .62rem; }
+.landing-feature-meta b { color: #f0f1f3; font-size: .62rem; }
+.compare-head { color: #aeb2ba; font-size: .68rem; }
+.compare-head small { color: #858a93; font-size: .55rem; }
+.compare-row { color: #b8bbc3; font-size: .72rem; line-height: 1.65; }
+.compare-row strong { color: #f1f2f4; font-size: .76rem; }
+.landing-cta { background: radial-gradient(circle at 70% 70%, rgba(255,90,36,.18), transparent 42%), #0f1114; color: #ffc0a7; }
+.landing-cta h2, .landing-cta p, .landing-cta > svg { color: #ffc0a7; }
+.landing-cta p { font-size: .86rem; }
+.landing-footer { color: #d1d3d7; }
+.landing-footer p { color: #aeb2ba; font-size: .72rem; }
+.landing-footer > div span { font-size: .6rem; }
+.landing-footer > div a { color: #aeb2ba; font-size: .66rem; }
+.landing-footer > small { color: #7e838c; font-size: .58rem; }
+@media (min-width: 901px) {
+  .landing-section-heading p, .landing-compare-intro p { font-size: 1.08rem; }
+  .landing-feature-card p { font-size: .94rem; }
+  .compare-head { font-size: .74rem; }
+  .compare-row { font-size: .82rem; }
+  .compare-row strong { font-size: .86rem; }
+  .landing-cta p { font-size: .92rem; }
+}
+@media (max-width: 640px) {
+  .landing-section-heading p, .landing-compare-intro p { font-size: .82rem; }
+  .landing-feature-card h3 { font-size: 1.85rem; }
+  .landing-feature-card p { font-size: .78rem; }
+  .compare-head { font-size: .58rem; }
+  .compare-row { font-size: .64rem; }
+  .compare-row strong { font-size: .68rem; }
+  .landing-cta p { font-size: .78rem; }
+}
