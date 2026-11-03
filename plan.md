@@ -150,3 +150,8 @@ The landing telemetry chart keeps daily values in a distinct seven-point series 
 ## Lower-page readability and contrast refinement
 
 The lower landing sections now use a stepped type scale rather than tiny editorial microcopy: supporting paragraphs, feature descriptions, comparison rows, metadata, footer copy, and the contact CTA are all larger and brighter. General surfaces are lifted from near-black to charcoal for separation, while the contact CTA remains the darkest section with light-orange text as the visual close.
+
+
+## Footer contrast and typography refinement
+
+The footer now closes the page with a darker full-width band, creating a clear separation from the lighter charcoal landing surfaces above. Its supporting copy, navigation, contact address, and legal line use a larger light-orange scale, with a brighter hover state for links and responsive reductions only on narrow screens.

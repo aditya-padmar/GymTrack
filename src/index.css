@@ -297,3 +297,22 @@ button, input, select, textarea { font: inherit; }
   .compare-row strong { font-size: .68rem; }
   .landing-cta p { font-size: .78rem; }
 }
+
+/* Footer contrast pass. */
+.landing-footer {
+  background: #0d0f12;
+  box-shadow: 0 0 0 100vmax #0d0f12;
+  clip-path: inset(0 -100vmax);
+  color: #ffc0a7;
+}
+.landing-footer p { color: #ffc0a7; font-size: .86rem; line-height: 1.7; max-width: 250px; }
+.landing-footer > div span { color: #ffd1bd; font-size: .7rem; }
+.landing-footer > div a { color: #ffb99d; font-size: .78rem; }
+.landing-footer > div a:hover { color: #fff0e9; }
+.landing-footer > small { color: #d58d73; font-size: .66rem; }
+@media (max-width: 640px) {
+  .landing-footer p { font-size: .78rem; }
+  .landing-footer > div span { font-size: .64rem; }
+  .landing-footer > div a { font-size: .72rem; }
+  .landing-footer > small { font-size: .58rem; }
+}

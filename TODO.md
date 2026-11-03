@@ -126,3 +126,9 @@
 
 - [x] Increased the body and metadata type below Engineered Clarity so feature copy, comparison content, footer text, and supporting labels match the stronger hero/table readability scale.
 - [x] Lightened the general landing background and feature/comparison surfaces while keeping the contact CTA section distinctly dark; changed the contact CTA heading, copy, and icon to light orange.
+
+
+## Footer contrast and typography refinement
+
+- [x] Darkened the footer section to a deeper near-black band while keeping the rest of the landing page unchanged.
+- [x] Enlarged footer description, column labels, links, contact text, and copyright copy; shifted the footer typography to a readable light-orange palette with brighter hover states.
