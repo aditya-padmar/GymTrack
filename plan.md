@@ -170,3 +170,8 @@ The comparison block will use a more editorial matrix: a centered orange kicker 
 ## Engineered Clarity reference redesign
 
 The feature section will adopt the uploaded editorial layout: the section label and large two-line condensed headline occupy the left side, explanatory copy sits in a balanced right column, and three taller charcoal cards use orange icon tiles, readable supporting copy, and telemetry footer bars with clear metric hierarchy.
+
+
+## Dense landing-section spacing refinement
+
+The three largest lower-page blocks will be visually tightened without removing content: the telemetry cockpit, comparison matrix, and CTA panel will use narrower shared max-widths, smaller internal padding and row heights, and explicit centered margins to maintain equal whitespace on both sides.

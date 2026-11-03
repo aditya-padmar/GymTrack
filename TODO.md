@@ -147,3 +147,8 @@
 ## Engineered Clarity reference redesign
 
 - [x] Restyle the Engineered Clarity section to match the uploaded reference: wide two-column intro, large two-line condensed headline, larger supporting copy, taller charcoal feature cards, stronger orange icon tiles, and larger telemetry footers.
+
+
+## Dense landing-section spacing refinement
+
+- [x] Reduce the visual bulk of the dummy telemetry table, the comparison matrix beneath “WHY SERIOUS LIFTERS CHOOSE GYMTRACK,” and the CTA section below it; use tighter max-widths, reduced padding/heights, and equal auto-centered side spacing.
