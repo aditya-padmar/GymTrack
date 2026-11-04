@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function owner(uid) { return signedIn() && request.auth.uid == uid; }
+    function numberOrMissing(field) { return !(field in request.resource.data) || request.resource.data[field] is number; }
+
+    match /users/{uid} {
+      allow create: if owner(uid) && request.resource.data.uid == uid && request.resource.data.displayName is string && request.resource.data.email is string;
+      allow read: if owner(uid);
+      allow update: if owner(uid) && request.resource.data.uid == resource.data.uid && request.resource.data.email == resource.data.email;
+      allow delete: if owner(uid);
+
+      match /workouts/{workoutId} {
+        allow read, delete: if owner(uid);
+        allow create, update: if owner(uid) && request.resource.data.name is string && request.resource.data.status in ['draft', 'completed'] && request.resource.data.workoutDate is string;
+        match /exercises/{exerciseId} {
+          allow read, delete: if owner(uid);
+          allow create, update: if owner(uid) && request.resource.data.name is string && request.resource.data.exerciseType in ['strength', 'cardio', 'bodyweight', 'mobility'] && request.resource.data.order is number;
+          match /sets/{setId} {
+            allow read, delete: if owner(uid);
+            allow create, update: if owner(uid) && request.resource.data.setNumber is number && request.resource.data.completed is bool && numberOrMissing('weight') && numberOrMissing('reps') && numberOrMissing('rpe');
+          }
+        }
+      }
+      match /bodyMeasurements/{measurementId} {
+        allow read, delete: if owner(uid);
+        allow create, update: if owner(uid) && request.resource.data.recordedAt is string && request.resource.data.unitSystem in ['metric', 'imperial'] && numberOrMissing('weight') && numberOrMissing('waist') && numberOrMissing('bodyFatPercentage');
+      }
+      match /goals/{goalId} {
+        allow read, delete: if owner(uid);
+        allow create, update: if owner(uid) && request.resource.data.name is string && request.resource.data.targetValue is number && request.resource.data.status in ['active', 'completed', 'paused'];
+      }
+    }
+  }
+}
