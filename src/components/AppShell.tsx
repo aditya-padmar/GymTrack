@@ -1,29 +1,245 @@
 import { useState } from 'react';
-import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Activity, BarChart3, CalendarDays, ChevronRight, Dumbbell, History, Menu, Ruler, Settings, Sparkles, X } from 'lucide-react';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { useGymData } from '../context/GymDataContext';
-import { cn, StatusPill } from './ui';
 
 const navItems = [
-  { to: '/dashboard', label: 'Dashboard', icon: BarChart3 },
-  { to: '/log-workout', label: 'Log workout', icon: Dumbbell, accent: true },
-  { to: '/history', label: 'Workout history', icon: History },
-  { to: '/progress', label: 'Exercise progress', icon: Activity },
-  { to: '/measurements', label: 'Body measurements', icon: Ruler },
-  { to: '/analytics', label: 'Analytics', icon: CalendarDays },
-  { to: '/settings', label: 'Profile & settings', icon: Settings },
+  { to: '/dashboard', label: 'Dashboard', icon: 'grid_view' },
+  { to: '/log-workout', label: 'Log Workout', icon: 'add_circle', badge: 'NEW' },
+  { to: '/history', label: 'Workout History', icon: 'history' },
+  { to: '/progress', label: 'Exercise Progress', icon: 'trending_up' },
+  { to: '/measurements', label: 'Body Measurements', icon: 'straighten' },
+  { to: '/analytics', label: 'Analytics', icon: 'monitoring' },
+  { to: '/settings', label: 'Profile & Settings', icon: 'settings' },
 ];
 
 export function AppShell() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { data, isPreview } = useGymData();
+  const { data } = useGymData();
+  const { logout } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
-  const close = () => setMobileOpen(false);
-  const nav = <>
-    <div className="flex items-center gap-3 px-4 py-2 md:px-5"><div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-lime text-ink shadow-[0_0_24px_rgba(200,245,58,.22)]"><span className="text-xl font-black">G</span></div><div><div className="text-sm font-black tracking-tight text-white">Gym<span className="text-lime">Track</span></div><div className="text-[9px] uppercase tracking-[0.2em] text-muted">performance log</div></div></div>
-    <div className="mt-8 px-3"><div className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.22em] text-muted/70">Workspace</div><nav className="space-y-1">{navItems.map(({ to, label, icon: Icon, accent }) => <NavLink key={to} to={to} onClick={close} className={({ isActive }) => cn('group flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition', isActive ? 'bg-white/[0.07] text-white' : 'text-muted hover:bg-white/[0.04] hover:text-white', accent && !isActive && 'text-lime/90')}>{({ isActive }) => <><Icon size={17} strokeWidth={1.8} /><span className="flex-1">{label}</span>{to === '/log-workout' && <span className="rounded-md bg-lime/15 px-1.5 py-0.5 text-[9px] font-bold text-lime">NEW</span>}{isActive && <ChevronRight size={14} className="text-lime" />}</>}</NavLink>)}</nav></div>
-    <div className="mt-auto p-3"><div className="rounded-2xl border border-line bg-panel/70 p-4"><div className="mb-3 flex items-center justify-between"><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted">Profile status</span><StatusPill tone={isPreview ? 'amber' : 'lime'}>{isPreview ? 'Preview' : 'Synced'}</StatusPill></div><p className="text-sm font-semibold text-white">{data.profile.displayName}</p><p className="mt-1 truncate text-xs text-muted">{data.profile.email}</p><button onClick={() => navigate('/settings')} className="mt-4 text-xs font-semibold text-lime hover:text-white">Manage profile <span aria-hidden>→</span></button></div></div>
-  </>;
-  return <div className="min-h-screen max-w-full overflow-x-hidden bg-ink text-white"><aside className="fixed inset-y-0 left-0 z-40 hidden w-[248px] flex-col border-r border-line bg-ink/95 py-5 md:flex">{nav}</aside><div className="min-w-0 md:pl-[248px]"><header className="sticky top-0 z-30 flex h-[70px] items-center justify-between border-b border-line bg-ink/90 px-4 backdrop-blur-xl md:px-8"><button onClick={() => setMobileOpen(true)} className="rounded-xl p-2 text-muted hover:bg-white/5 hover:text-white md:hidden" aria-label="Open navigation"><Menu size={21} /></button><div className="hidden items-center gap-2 text-xs text-muted md:flex"><span className="h-1.5 w-1.5 rounded-full bg-lime" /> Private training journal <span className="text-line">/</span> {location.pathname === '/dashboard' ? 'Overview' : location.pathname.replace('/', '').replace('-', ' ')}</div><div className="ml-auto flex items-center gap-3"><button onClick={() => navigate('/settings')} className="hidden text-right sm:block"><div className="text-xs font-semibold text-white">{data.profile.displayName}</div><div className="text-[10px] text-muted">{isPreview ? 'Preview workspace' : 'Firestore synced'}</div></button><div className="flex h-9 w-9 items-center justify-center rounded-full border border-lime/40 bg-lime/10 text-xs font-bold text-lime">{data.profile.displayName.split(' ').map((part) => part[0]).join('').slice(0, 2)}</div></div></header><main className="min-h-[calc(100vh-70px)] min-w-0 px-4 py-7 md:px-8 md:py-10 lg:px-10">{isPreview && <div className="mb-7 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-amber-300/20 bg-amber-300/[0.06] px-4 py-3 text-xs text-amber-100"><div className="flex min-w-0 items-start gap-2"><Sparkles size={15} className="mt-0.5 shrink-0 text-amber-300" /><span><strong>Preview data is active.</strong> Connect Firebase to make this workspace private and persistent.</span></div><button onClick={() => navigate('/settings')} className="shrink-0 font-bold text-amber-200 hover:text-white">Setup Firebase →</button></div>}<Outlet /></main></div>{mobileOpen && <div className="fixed inset-0 z-50 bg-black/60 md:hidden" onClick={close}><aside onClick={(event) => event.stopPropagation()} className="flex h-full w-[min(280px,calc(100vw-52px))] flex-col border-r border-line bg-ink py-5">{nav}<button onClick={close} className="absolute left-[calc(min(280px,100vw-52px)+12px)] top-5 rounded-xl bg-panel p-2 text-muted"><X size={18} /></button></aside></div>}</div>;
+
+  const displayName = data.profile.displayName || 'Aditya Bhat';
+  const email = data.profile.email || 'aditya.bhat@athletic.io';
+  const initials = displayName
+    .split(' ')
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase() || 'AB';
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/login');
+  };
+
+  const sidebarContent = (
+    <>
+      <div className="flex flex-col gap-space-lg">
+        <Link
+          to="/dashboard"
+          onClick={() => setMobileOpen(false)}
+          className="flex items-center gap-space-sm px-space-xs py-space-xs"
+        >
+          <div className="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-[0_0_20px_rgba(255,94,30,0.45)]">
+            <span className="material-symbols-outlined text-[22px]">fitness_center</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-headline-md text-headline-md tracking-wider text-on-surface leading-none">
+              GYMTRACK
+            </span>
+            <span className="font-label-sm text-label-sm text-primary tracking-widest uppercase">
+              Performance Log
+            </span>
+          </div>
+        </Link>
+
+        <div className="flex flex-col gap-space-xs">
+          <div className="px-space-xs py-space-xs">
+            <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+              Workspace
+            </span>
+          </div>
+          <nav className="flex flex-col gap-space-xs">
+            {navItems.map(({ to, label, icon, badge }) => (
+              <NavLink
+                key={to}
+                to={to}
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) =>
+                  isActive
+                    ? 'flex items-center justify-between px-space-sm py-space-sm transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_0_20px_rgba(255,94,30,0.25)] font-body-md text-body-md'
+                    : 'flex items-center justify-between px-space-sm py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all'
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <div className="flex items-center gap-space-sm">
+                      <span className="material-symbols-outlined text-[20px]">{icon}</span>
+                      <span>{label}</span>
+                    </div>
+                    {badge && (
+                      <span
+                        className={`font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold tracking-wider ${
+                          isActive
+                            ? 'bg-surface-container-lowest/25 text-on-primary-container'
+                            : 'bg-primary-container text-on-primary-container'
+                        }`}
+                      >
+                        {badge}
+                      </span>
+                    )}
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      <div className="p-space-sm rounded-xl bg-surface-container/80 backdrop-blur-md flex flex-col gap-space-xs">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-space-xs">
+            <div className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+            <span className="font-label-sm text-label-sm uppercase text-primary">PRO ATHLETE</span>
+          </div>
+          <span className="font-label-sm text-label-sm text-secondary">Lvl 42</span>
+        </div>
+        <div className="flex items-center gap-space-sm pt-space-xs">
+          <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-label-lg text-label-lg font-bold text-primary shrink-0">
+            {initials}
+          </div>
+          <div className="flex flex-col min-w-0">
+            <span className="font-label-lg text-label-lg font-bold text-on-surface truncate leading-tight">
+              {displayName}
+            </span>
+            <span className="font-label-sm text-label-sm text-on-surface-variant truncate">
+              {email}
+            </span>
+          </div>
+        </div>
+        <div className="pt-space-xs flex items-center justify-between">
+          <Link
+            to="/settings"
+            onClick={() => setMobileOpen(false)}
+            className="font-label-sm text-label-sm text-primary hover:text-on-surface transition-colors flex items-center gap-0.5"
+          >
+            <span>Manage profile</span>
+            <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </Link>
+          <button
+            type="button"
+            onClick={() => {
+              void handleLogout();
+            }}
+            title="Log out"
+            className="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer text-[18px]"
+          >
+            logout
+          </button>
+        </div>
+      </div>
+    </>
+  );
+
+  return (
+    <div className="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+      {/* Desktop Fixed Sidebar */}
+      <aside className="hidden md:flex fixed left-0 top-0 h-full w-72 bg-surface-container-low/90 backdrop-blur-xl z-50 flex-col justify-between p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        {sidebarContent}
+      </aside>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm md:hidden"
+          onClick={() => setMobileOpen(false)}
+        >
+          <aside
+            onClick={(e) => e.stopPropagation()}
+            className="fixed left-0 top-0 h-full w-72 bg-surface-container-low/95 backdrop-blur-xl z-50 flex flex-col justify-between p-space-md shadow-2xl"
+          >
+            {sidebarContent}
+          </aside>
+        </div>
+      )}
+
+      <div className="md:pl-72">
+        <header className="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-gutter shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+          <div className="flex items-center gap-space-sm">
+            <button
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              className="md:hidden w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors"
+              aria-label="Open navigation"
+            >
+              <span className="material-symbols-outlined text-[20px]">menu</span>
+            </button>
+            <span className="material-symbols-outlined text-primary text-[20px]">terminal</span>
+            <nav className="flex items-center gap-space-xs font-label-sm text-label-sm">
+              <span className="text-on-surface-variant">ATHLETE HUB</span>
+              <span className="text-outline-variant">/</span>
+              <span className="text-on-surface uppercase">PERFORMANCE CONSOLE</span>
+            </nav>
+          </div>
+          <div className="flex items-center gap-space-md">
+            <div className="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant">
+              <span className="material-symbols-outlined text-[18px]">schedule</span>
+              <span className="font-label-sm text-label-sm text-on-surface">WEEK 28 DAY 4</span>
+            </div>
+            <div className="flex items-center gap-space-sm">
+              <button
+                onClick={() => navigate('/analytics')}
+                className="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant flex items-center justify-center transition-colors"
+                type="button"
+                title="Telemetry Notifications"
+              >
+                <span className="material-symbols-outlined text-[20px]">notifications</span>
+              </button>
+              <button
+                onClick={() => navigate('/history')}
+                className="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant flex items-center justify-center transition-colors"
+                type="button"
+                title="Search Workouts"
+              >
+                <span className="material-symbols-outlined text-[20px]">search</span>
+              </button>
+              <button
+                onClick={() => navigate('/settings')}
+                className="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:brightness-110 transition-all"
+                type="button"
+                title="Profile & Settings"
+              >
+                <span className="material-symbols-outlined text-on-primary text-[18px]">person</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <main className="w-full pt-16 bg-surface-container-lowest px-gutter py-space-lg min-h-screen">
+          {/* Quick Page Switcher on narrow viewports */}
+          <div className="flex md:hidden items-center gap-1.5 overflow-x-auto pb-space-md mb-space-sm">
+            {navItems.map(({ to, label, icon }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-label-sm text-label-sm uppercase tracking-wider transition-all ${
+                    isActive
+                      ? 'bg-primary-container text-on-primary-container font-bold'
+                      : 'bg-surface-container text-on-surface-variant hover:text-on-surface'
+                  }`
+                }
+              >
+                <span className="material-symbols-outlined text-[16px]">{icon}</span>
+                <span>{label}</span>
+              </NavLink>
+            ))}
+          </div>
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
 }
